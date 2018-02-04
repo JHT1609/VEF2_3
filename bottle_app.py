@@ -1,3 +1,4 @@
+import os
 from bottle import route, run, template, static_file
 
 frettirl = [
@@ -33,4 +34,4 @@ def lidura():
 def kt(kennitala):
     return template('kt', kennitala=kennitala)
 
-run()
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
